@@ -13,24 +13,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check cowsay
-        run: which cowsay || echo 'Program not found'
-
       - name: Check fortune
         run: which fortune || echo 'Program not found'
+
+      - name: Check lolcat
+        run: which lolcat || echo 'Program not found'
 
       - name: Setup homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Setup cowsay
-        run: brew install cowsay
-
       - name: Setup fortune
         run: brew install fortune
 
-      - name: Run cowsay
-        run: cowsay --help
+      - name: Setup lolcat
+        run: brew install lolcat
 
       - name: Run fortune
-        run: fortune --help
+        run: fortune
+
+      - name: Run lolcat
+        run: fortune | lolcat
