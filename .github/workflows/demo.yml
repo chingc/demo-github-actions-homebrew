@@ -27,3 +27,7 @@ jobs:
 
       - name: Run fortune
         run: fortune
+
+      - run: aws --version
+
+      - run: brew search aws
