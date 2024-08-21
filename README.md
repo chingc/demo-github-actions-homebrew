@@ -1,10 +1,10 @@
 # Demo
 
-If you're a macOS developer you're probably familiar with homebrew.
+If you develop on macOS you're probably familiar with homebrew.
 
-Homebrew also works on Linux.
+Did you know it's also available on Linux?
 
-This demo shows how you can use it to easily install applications on the runner.
+This demo shows how you can leverage its power and convenience to install applications on GitHub Actions runners.
 
 ## Overview
 
