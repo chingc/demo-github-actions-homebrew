@@ -13,9 +13,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: which fortune || exit 0
-      - run: which cowsay || exit 0
+      - name: Check cowsay
+        run: which cowsay || echo 'Program not found'
+
+      - name: Check fortune
+        run: which fortune || echo 'Program not found'
 
       - name: Setup homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Setup cowsay
+        run: brew install cowsay
+
+      - name: Setup fortune
+        run: brew install fortune
+
+      - name: Run cowsay
+        run: cowsay --help
+
+      - name: Run fortune
+        run: fortune --help
