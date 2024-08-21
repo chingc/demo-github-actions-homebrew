@@ -20,7 +20,6 @@ jobs:
         run: which fortune || echo 'Program not found'
 
       - name: Setup homebrew
-        id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Setup fortune
