@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: which fortune
-      - run: which cowsay
+      - run: which fortune || exit 0
+      - run: which cowsay || exit 0
 
       - name: Setup homebrew
         id: set-up-homebrew
