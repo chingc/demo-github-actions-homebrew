@@ -1,0 +1,21 @@
+name: Demo
+
+on:
+  push:
+  schedule:
+    - cron: '30 5 1 * *'
+  workflow_dispatch:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: which fortune
+      - run: which cowsay
+
+      - name: Setup homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
