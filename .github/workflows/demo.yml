@@ -1,0 +1,30 @@
+name: Demo
+
+on:
+  push:
+  schedule:
+    - cron: '30 5 1 * *'
+  workflow_dispatch:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check brew
+        run: which brew || echo 'Program not found'
+
+      - name: Check fortune
+        run: which fortune || echo 'Program not found'
+
+      - name: Setup homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Setup fortune
+        run: brew install fortune
+
+      - name: Run fortune
+        run: fortune
