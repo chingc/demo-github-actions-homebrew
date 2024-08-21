@@ -13,11 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check brew
+        run: which brew || echo 'Program not found'
+
       - name: Check fortune
         run: which fortune || echo 'Program not found'
-
-      - name: Check lolcat
-        run: which lolcat || echo 'Program not found'
 
       - name: Setup homebrew
         id: set-up-homebrew
@@ -26,11 +26,5 @@ jobs:
       - name: Setup fortune
         run: brew install fortune
 
-      - name: Setup lolcat
-        run: brew install lolcat
-
       - name: Run fortune
         run: fortune
-
-      - name: Run lolcat
-        run: fortune | lolcat
